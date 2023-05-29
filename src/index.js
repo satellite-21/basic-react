@@ -1,23 +1,26 @@
+
+//creating a react app from scratch 
+//showing a single h1 that says "good morning if between midinight and 12PM" [0 - 12) AM
+//or "good afternoon" if bw 12PM and 6PM [12 - 18) PM
+//or "good evening" if bw 6PM and midnight [18 - 0 ) PM 
+// 0-12 AM
+//12-18 PM
+// hours [0-12) AM ---> morning >==0 && < 12
+// hours [12-18) PM --> afternoon >==12 && <18
+// hours [18- 0) PM --> evening
+//apply the "heading" style in the styles.css
+//dynamically change the color of the h1 using inline css styles
+//morning = red , afternoon=green, night=blue
+
 import React from "react";
 import ReactDOM from "react-dom";
-//now render 
 
-const img = 'https://picsum.photos/200/300'
 
-ReactDOM.render(
-<div>
-    <h1 className="heading_color" contentEditable='false' >Stay hungry, Stay Foolish </h1>
-    <div>
-        <img className="image-size" src="https://e0.pxfuel.com/wallpapers/217/384/desktop-wallpaper-hennie-funexplosie-08-steve-jobs-lr-stay-hungry-stay-foolish.jpg" alt="Steve_jobs1"></img>
-        <img className="image-size" src="https://www.hollywoodreporter.com/wp-content/uploads/2015/03/steve_jobs_the_man_in_the_machine_still.jpg?w=3000" alt="Steve_jobs2"></img>
-        <img className="image-size" src="https://www.investopedia.com/thmb/SOrSZjDw7SXxt4ojtfF0soN-TY8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/steve-jobs-apple-story_final-14a355d35609422798041dcfb2cb61f6.png" alt="Steve_jobs3"></img>
-        
-        {/* you can also use const to insert the images  */}
-        <img className="image-size" src={img+ "?grayscale"} alt="random"/>
-    </div>
+const currTime = new Date()
+const hours =  currTime.getHours()
 
-</div>, 
 
-document.getElementById("root")
 
-)
+ReactDOM.render(<h1 className="heading">
+    {hours}
+</h1>, document.getElementById("root"))
