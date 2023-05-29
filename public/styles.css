@@ -1,0 +1,9 @@
+.heading_color{
+    color:rgb(75, 210, 88);
+}
+
+.image-size{
+    height: 300px;
+    width: 200px;
+    object-fit: cover;
+}   
